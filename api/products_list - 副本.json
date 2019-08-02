@@ -1,0 +1,37 @@
+{
+	"code": 0,
+	"msg": "获取数据成功",
+	"data": {
+		"top": [{
+			"id": "nfgg123",
+			"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+			"likeNumber": 123,
+			"goodsName": "安娜图拉小米糊"
+		}],
+		"baby": [{
+			"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+			"likeNumber": "123人喜欢",
+			"goodsName": "安娜图拉小米糊"
+		}],
+		"care": [{
+			"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+			"likeNumber": "123人喜欢",
+			"goodsName": "安娜图拉小米糊"
+		}],
+		"top": [{
+			"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+			"likeNumber": "123人喜欢",
+			"goodsName": "安娜图拉小米糊"
+		}],
+		"drink": [{
+			"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+			"likeNumber": "123人喜欢",
+			"goodsName": "安娜图拉小米糊"
+		}],
+		"living": [{
+			"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+			"likeNumber": "123人喜欢",
+			"goodsName": "安娜图拉小米糊"
+		}],
+	}
+}

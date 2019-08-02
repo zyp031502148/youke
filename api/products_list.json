@@ -1,0 +1,38 @@
+{
+	"code": 0,
+	"msg": "获取数据成功",
+	"data": [{
+		"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+		"likeNumber": "123人喜欢",
+		"goodsName": "安娜图拉小米糊"
+	}, {
+		"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+		"likeNumber": "143人喜欢",
+		"goodsName": "babyydream有机小米糊"
+	}, {
+		"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+		"likeNumber": "143人喜欢",
+		"goodsName": "babyydream有机小米糊"
+	}, {
+		"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+		"likeNumber": "143人喜欢",
+		"goodsName": "babyydream有机小米糊"
+	}, {
+		"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+		"likeNumber": "143人喜欢",
+		"goodsName": "babyydream有机小米糊"
+	}, {
+		"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+		"likeNumber": "143人喜欢",
+		"goodsName": "babyydream有机小米糊"
+	}, {
+		"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+		"likeNumber": "143人喜欢",
+		"goodsName": "babyydream有机小米糊"
+	}, {
+		"goodsImg": "https://oct32s5rj.qnssl.com/okoer/brandadmin/upload/pic/20150506/25_cp.jpg",
+		"likeNumber": "143人喜欢",
+		"goodsName": "babyydream有机小米糊"
+	}]
+
+}

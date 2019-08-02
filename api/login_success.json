@@ -1,0 +1,8 @@
+{
+	"code": 0,
+	"msg": "登录成功",
+	"data": {
+		"userName": "userName123",
+		"img": "https://head.okoer.com/sites/default/files/2pgYqN1562838292.jpg"
+	}
+}
