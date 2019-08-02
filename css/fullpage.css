@@ -1,0 +1,185 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html{
+	height: 100%;
+}
+body {
+	line-height: 1;
+	height: 100%;
+	position: relative;
+	
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.fullpage_img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+	
+}
+.full_page1,.full_page2,.full_page3,.full_page4,.full_page5{
+	margin:0px;
+	padding: 0px;
+	position: relative;
+	vertical-align: bottom;
+
+}
+.full_page1{
+	width: 100%;
+	height: 100%;
+}
+.full_page2{
+	width: 100%;
+	height: 100%;
+	background: #67c9d4;
+}
+.full_page3{
+	width: 100%;
+	height: 100%;
+	background: #ffcd5c;
+}
+.full_page4{
+	width: 100%;
+	height: 100%;
+	background: #f9aca4;
+}
+.full_page5{
+	width: 100%;
+	height: 100%;
+	background: #1ac28e;
+	color: #fff;
+}
+.green_bg{
+	background-color: #17bf8b;
+	height: 72%;
+}
+.white_bg{
+	background-color: #fff;
+	height: 3%;
+}
+.yellow_bg{
+	background-color: #ffcd5c;
+	height: 20%;
+}
+.black_bg{
+	background-color: #333;
+	height: 5%;
+}
+.img_position{
+	width: 58%;
+	position: absolute;
+	bottom: 20%;
+	left: 20%;
+
+}
+.ip_1{
+	float: left;
+	width: 26%;
+	margin-top: 10%;
+}
+.ip_2{
+	float: right;
+	width: 65%;
+}
+.fullpage_radio{
+	position: absolute;
+	left: 30px;
+	top: 40%;
+
+}
+.fullpage_radio ol li{
+	width: 13px;
+	height: 13px;
+	border-radius: 100%;
+	background: rgba(255,255,255,0.5);
+	cursor: pointer;
+	margin-top: 15px;
+}
+.fullpage_radio ol .fullpage_li_on{
+	background: #fff;
+}
+.ip_3{
+	float: right;
+	width: 65%;
+}
+.ip_4{
+	margin-top: 10%;
+	margin-left: 7%;
+	width: 26%;
+}
+.ip_5{
+	margin-top: 10%;
+	margin-right: 7%;
+	width: 26%;
+}
+.ip_6{
+	width: 60%;
+	float: right;
+}
+.ip_7{
+	width: 60%;
+	float: left;
+}
+.ip_8{
+	width: 26%;
+	margin-top: 15%;
+	margin-left: 7%;
+}
+.ip_9{
+	padding-top: 6%;
+	padding-bottom: 3%;
+	margin-left: 45%;
+
+}
+.full_page5 h2{
+	font-size: 42px;
+	color: #fff;
+	text-align: center;
+}
+.full_page5 p{
+	line-height: 50px;
+	text-align: center;
+	padding-bottom: 20px;
+}
