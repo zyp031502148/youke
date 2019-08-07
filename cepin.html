@@ -62,7 +62,7 @@
 		</div>
 		<div class="page">
 				<ul id="tab_t">
-					<li class="last-page" style="display: none"><a href="#"><img src="images/left2.png"></a></li>
+					<li class="last-page" style="display: none"><a href="#"><img class="lastPage" src="images/left2.png"></a></li>
 					<li class="act" id="pagelink">1</li>
 					<li id="pagelink">2</li>
 					<li id="pagelink">3</li>
@@ -70,7 +70,7 @@
 					<li id="pagelink">5</li>
 					<li class="sl">...</li>
 					<li id="pagelink">19</li>
-					<li class="next-page"><a href="#"><img src="images/right2.png"></a></li>
+					<li class="next-page"><a href="#"><img class="nextPage" src="images/right2.png"></a></li>
 				</ul>
 				<div class="pgbtn">
 					<span>跳转到</span>
@@ -169,7 +169,61 @@
 	]
 	console.log(page);
 	renderPage(urllist[0]);
-	for(var i = 0; i<8; i++){
+	function jump(item,page){
+			var currentPage =  document.querySelector(".act");
+			var pageNumber = item.innerHTML;
+			pageNumber = parseInt(pageNumber);
+			console.log("现在第：" + pageNumber + "页");
+			var index = pageNumber - 1;;
+			var url = urllist[index];
+			renderPage(url);
+			currentPage.className = "";
+			page[pageNumber].className = "act";
+			if(pageNumber>1){
+				lastPage.style.display = 'block';
+			}
+			if(pageNumber>4&&currentPage.innerHTML<pageNumber&&((page[pageNumber+1].innerHTML == "...")&&!(page[pageNumber+1].style.display == 'none'))){
+				page[pageNumber-4].style.display = 'none';
+				var liNode = document.createElement("li");
+				liNode.setAttribute('id', 'pagelink');
+				liNode.innerHTML = parseInt(pageNumber) + 1;
+				pageParent.insertBefore(liNode,omit);
+			}
+			if(pageNumber<4&&currentPage.innerHTML>5){
+				for(var t = 1; t<currentPage.innerHTML-4; t++){
+					page[t].style.display = "block";
+					page[currentPage.innerHTML--].style.display = 'none';
+				}
+			}
+			if(pageNumber-1>0&&(page[pageNumber-1].style.display=='none')){
+				console.log(pageNumber+3);
+				page[pageNumber-1].style.display = 'block';
+				page[pageNumber+4].style.display = 'none';
+			}
+			if(!(page[pageNumber+1].innerHTML == "...")&&(page[pageNumber+1].style.display == 'none')){
+				page[pageNumber+1].style.display = 'block';
+				page[pageNumber-4].style.display = 'none';
+			}
+		}
+	function jumpLast(page){
+		var currentPage =  document.querySelector(".act");
+		if(currentPage.innerHTML>1){
+			page[currentPage.innerHTML].className = '';
+			page[currentPage.innerHTML-1].className = 'act';
+			var strClassName = page[parseInt(currentPage.innerHTML-1)].style.display;
+			if(strClassName == 'none'){
+				page[parseInt(currentPage.innerHTML)+4].style.display = 'none';
+				page[parseInt(currentPage.innerHTML-1)].style.display = 'block';
+			}
+		}
+	}
+	function jumpNext(page){
+		var currentPage =  document.querySelector(".act");
+		if(currentPage.innerHTML<1){
+			jump(item,page);
+		}
+	}
+	/*for(var i = 0; i<urllist.lenght; i++){
 		page[i].onclick = function(){
 			var currentPage =  document.querySelector(".act");
 			var pageNumber = this.innerHTML;
@@ -198,15 +252,24 @@
 			}
 			console.log(page);
 		}
-	}
+	}*/
 	console.log(pageParent);
 	console.log(page[5]);
 	pageParent.onclick = function(){
+		console.log("123456");
 		console.log((event.target.id));
+		console.log(event.target);
 		if(/\bpagelink/.test(event.target.id)){
 			var thisItem = event.target;
 			console.log(thisItem);
-			drump(thisItem);
+			jump(thisItem,page);
+		}
+		if(event.target.className == "lastPage"){
+			console.log(event.target.className);
+			jumpLast(page);
+		}
+		if(event.target.className == "nextPage"){
+			
 		}
 	}
 
