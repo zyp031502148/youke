@@ -10,4 +10,6 @@ window.onload = function(){
 	seachOnclick.onblur = function(){
 		searchBox.className= "searchbox";
 	}
+
+	
 }

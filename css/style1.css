@@ -371,26 +371,27 @@ table {
 	text-decoration: none;
 	font-size: 14px;
 }
-.goods{
+.categery_content{
 	overflow: hidden;
 }
 #noborder{
 	border: 0px;
 }
-.goods .reduction{
-	width: 19.918898%;
+.categery_content .reduction{
+	width: 19.917%;
 	overflow: hidden;
 	background: #fff;
 	float: left;
 	border-left: 1px solid #f5f5f5;
+	border-bottom: 1px solid #f5f5f5;
 
 }
-.goods .reduction a div{
+.categery_content .reduction a div{
 	position: relative;
 	margin: 10px 15px;
 	
 }
-.goods .reduction a div.txt p{
+.categery_content .reduction a div.txt p{
 	margin-bottom: 8px;
 	text-overflow: ellipsis;white-space: nowrap;
 }

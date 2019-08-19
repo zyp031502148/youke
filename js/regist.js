@@ -2,8 +2,10 @@ window.onload = function(){
 	var passwordLookIcon = document.getElementById('icon_eye_close');
 	var passwordInput = document.getElementById('password');
 	var password_input_text = document.getElementById('password_open');
+	var tel = document.querySelector('.tel');
+	var fsyzBtn = document.querySelector('.fsyz_btn');
+	var registBtn = document.querySelector('.regist_btn')
 	passwordLookIcon.onclick = function iconEyeChange(ev){
-		console.log("123");
 		if(passwordInput.type == "password"){
 			passwordInput.type = "text";
 			passwordLookIcon.style.backgroundImage = 'url(./images/open.png)'
@@ -11,17 +13,40 @@ window.onload = function(){
 			passwordInput.type = "password";
 			passwordLookIcon.style.backgroundImage = 'url(./images/close.png)'
 		}
-		/*if(password_look_icon.className == "icon_eye_close"){
-			password_look_icon.className = "icon_eye_open";
-			password_input_pass.style.display = 'none';
-			password_input_text.style.display = 'inline-block';
-
-		}else if(password_look_icon.className == "icon_eye_open"){
-			password_look_icon.className = "icon_eye_close";
-			password_input_text.style.display = 'none';
-			password_input_pass.style.display = 'inline-block';
-		}
-*/
+	}
+	fsyzBtn.onclick = function(){
+		 var regPhone = /^1[3-9][0-9]{9}$/;
+		 var telNumber = tel.value;
+		 if(!regPhone.test(telNumber)){
+		 		alert('请输入正确的手机号！')
+		 }else{
+		 	var option = {
+		 		type:'GET',
+		 		url:'',
+		 		date:{
+		 			tel:telNumber,
+		 		},
+		 		success:function(res){
+		 			res = JSON.parse(res);
+		 			var yzCode = res.yzCode;
+		 		}
+		 	}
+		ajax(option);
+	}
+}
+	registBtn.onclick = function(){
+		var passwordVal = document.querySelector('#password').value;
+		var option = {
+		 		type:'GET',
+		 		url:'',
+		 		date:{
+		 			tel:passwordVal,
+		 		},
+		 		success:function(res){
+		 			res = JSON.parse(res);
+		 		}
+		 	}
+	  ajax(option);
 	}
 	var searchBox = document.getElementById('searchbox');
 	var seachOnclick = document.getElementById('keyword'); 
@@ -31,6 +56,6 @@ window.onload = function(){
 	seachOnclick.onblur = function(){
 		searchBox.className= "searchbox";
 	}
-
 }
+
 	
