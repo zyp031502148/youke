@@ -103,4 +103,128 @@ window.onload = function(){
 		searchBox.className= "searchbox";
 	}
 
+	var newGoods = document.querySelectorAll(".new-goods>.goods>.reduction");
+	var fashionGoods = document.querySelectorAll(".fashion-goods>.goods>.reduction")
+	var newGoodsReduction = newGoods;
+	var newGoodsoption = {
+		type : 'GET',
+		url : '../api/products_list.json',
+		async : true,
+		data:{
+			
+		},
+		success : function(res){
+			res = JSON.parse(res);
+			console.log(res);
+			var data = res.data.list;
+			console.log(newGoodsReduction.length);
+			for(var i = 0; i<newGoodsReduction.length; i++){
+				console.log(data[i].goodsImg);
+				newGoodsReduction[i].children[0].children[0].children[0].src = data[i].goodsImg;
+				newGoodsReduction[i].children[0].children[0].children[1].src = 'images/a+.png';
+				newGoodsReduction[i].children[0].children[1].children[0].innerHTML = data[i].goodsName;
+				newGoodsReduction[i].children[0].children[1].children[1].innerHTML = data[i].likeNumber;
+			}
+		
+	}
+	
+}
+ajax(newGoodsoption);
+var fashionGoodsoption = {
+		type : 'GET',
+		url : '../api/products_list.json',
+		async : true,
+		data:{
+			
+		},
+		success : function(res){
+			res = JSON.parse(res);
+			console.log(res);
+			var data = res.data.list;
+			for(var i = 0; i<fashionGoods.length; i++){
+				console.log(data[i].goodsImg);
+				fashionGoods[i].children[0].children[0].children[0].src = data[i].goodsImg;
+				fashionGoods[i].children[0].children[0].children[1].src = 'images/a+.png';
+				fashionGoods[i].children[0].children[1].children[0].innerHTML = data[i].goodsName;
+				fashionGoods[i].children[0].children[1].children[1].innerHTML = data[i].likeNumber;
+			}
+		
+	}
+	
+}
+ajax(fashionGoodsoption);
+var babyMotherGoods = document.querySelectorAll(".baby-mother>.goods>.reduction")
+var babyMotherGoodsoption = {
+		type : 'GET',
+		url : '../api/products_list.json',
+		async : true,
+		data:{
+			
+		},
+		success : function(res){
+			res = JSON.parse(res);
+			console.log(res);
+			var data = res.data.list;
+			for(var i = 0; i<babyMotherGoods.length; i++){
+				console.log(data[i].goodsImg);
+				babyMotherGoods[i].children[0].children[0].children[0].src = data[i].goodsImg;
+				babyMotherGoods[i].children[0].children[0].children[1].src = 'images/a+.png';
+				babyMotherGoods[i].children[0].children[1].children[0].innerHTML = data[i].goodsName;
+				babyMotherGoods[i].children[0].children[1].children[1].innerHTML = data[i].likeNumber;
+			}
+		
+	}
+	
+}
+ajax(babyMotherGoodsoption);
+
+var foodDrinkGoods = document.querySelectorAll(".food-drink>.goods>.reduction")
+var foodGrinkGoodsoption = {
+		type : 'GET',
+		url : '../api/products_list.json',
+		async : true,
+		data:{
+			
+		},
+		success : function(res){
+			res = JSON.parse(res);
+			console.log(res);
+			var data = res.data.list;
+			for(var i = 0; i<foodDrinkGoods.length; i++){
+				console.log(data[i].goodsImg);
+				foodDrinkGoods[i].children[0].children[0].children[0].src = data[i].goodsImg;
+				foodDrinkGoods[i].children[0].children[0].children[1].src = 'images/a+.png';
+				foodDrinkGoods[i].children[0].children[1].children[0].innerHTML = data[i].goodsName;
+				foodDrinkGoods[i].children[0].children[1].children[1].innerHTML = data[i].likeNumber;
+			}
+		
+	}
+	
+}
+ajax(foodGrinkGoodsoption);
+var homeGoods = document.querySelectorAll(".home>.goods>.reduction")
+var homeGoodsoption = {
+		type : 'GET',
+		url : '../api/products_list.json',
+		async : true,
+		data:{
+			
+		},
+		success : function(res){
+			res = JSON.parse(res);
+			console.log(res);
+			var data = res.data.list;
+			for(var i = 0; i<homeGoods.length; i++){
+				console.log(data[i].goodsImg);
+				homeGoods[i].children[0].children[0].children[0].src = data[i].goodsImg;
+				homeGoods[i].children[0].children[0].children[1].src = 'images/a+.png';
+				homeGoods[i].children[0].children[1].children[0].innerHTML = data[i].goodsName;
+				homeGoods[i].children[0].children[1].children[1].innerHTML = data[i].likeNumber;
+			}
+		
+	}
+	
+}
+ajax(homeGoodsoption);
+
 }

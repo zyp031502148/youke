@@ -419,9 +419,11 @@ table {
 		text-align: center;
 }
 .txt p{
+	width: 95%;
 	overflow: hidden;
-	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
 	white-space: nowrap;
+	margin-left: 10px;
 }
 .txt span{
 	font-size: 13px;
@@ -607,8 +609,9 @@ table {
 .ccb_b .goods{
 	border-bottom: 1px solid #f5f5f5;
 }
-.ccb_b .goods:last-child .reduction{
+.ccb_b .goods .reduction{
 	border-right: 1px solid #f5f5f5;
+	border-bottom: 1px solid #f5f5f5;
 }
 .ccb_b .goods .txt{
 	margin-bottom: 40px;
@@ -637,7 +640,7 @@ table {
 	background-size: 16px 16px;
 	color: #49C290;
 	position: absolute;
-	top: 30px;
+	bottom: 130px;
 	right: 20px;
 	line-height: 20px;
 	height: 20px;
@@ -692,7 +695,7 @@ table {
 .chupinfang{
 	position: absolute;
 	right: 20px;
-	top: 190px;
+	bottom: 105px;
 	color: #5a738c; 
 	background: rgba(109,155,210,0.3);
 	border-radius: 100px;
@@ -1253,4 +1256,31 @@ span img{
 	margin-bottom: 0px;
 
 
+}
+.new-goods>.goods,.baby-mother>.goods,.fashion-goods>.goods,.food-drink>.goods,.home>.goods{
+	width: 100%;
+	border-bottom: 1px solid #e6e1e1;
+	height: 295px;
+}
+.new-goods .goods .reduction,.baby-mother>.goods .reduction,.fashion-goods .reduction,.food-drink>.goods .reduction,.home>.goods .reduction{
+	width: 19.93%;
+	float: left;
+	background-color: #fff;
+	border-left: 1px solid #e6e1e1;
+}
+.new-goods .goods .reduction>a>div:first-child,
+.baby-mother .goods .reduction>a>div:first-child,
+.fashion-goods .goods .reduction>a>div:first-child,
+.food-drink .goods .reduction>a>div:first-child,
+.home .goods .reduction>a>div:first-child
+{
+	position: relative;
+}
+.ccb_b{
+	width: 100%;
+	float: right;
+}
+.ccb_b>.goods>.reduction{
+	width: 19.917%;
+	float: left;
 }

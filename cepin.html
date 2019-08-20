@@ -146,83 +146,9 @@
 <script type="text/javascript" src="js/renderPage.js"></script>
 <script type="text/javascript" src="./utlis/ajax.js"></script>
 <script type="text/javascript">
-	/*var pageParent = document.querySelector(".page").children[0];
-	
-	var lastPage = document.querySelector('.lastPage');
-	var cepingContent = document.querySelectorAll(".ceping-content");
-	var omit = document.querySelectorAll(".sl")[0];
-	var prePage = document.querySelector(".pre-page");
-	var nextPage = document.querySelector(".next-page");
-	
-	var ok = document.querySelector('#OK');
-	var jumpPage = document.querySelector('#jumpPage');*/
 	var cepingBody = document.querySelector(".ceping-body");
 	var page = document.querySelector(".page").children[0].children;
 	renderPage(0);
-	/*function jump(jPageNum,totalPage,item){
-		if(jPageNum<totalPage){
-			if(jPageNum>totalPage-2||jPageNum<3){
-				pageOnlyChange(item);
-			}else{
-				pageMore(item);
-				console.log('pagemore');
-			}
-			if(jPageNum+3 >= totalPage){
-				pageSl(0);
-			}else{
-				pageSl(1);
-				console.log(1);
-			}
-		}else if(jPageNum==totalPage||jPageNum==totalPage+1){
-			pageOnlyChange(item);
-		}
-		if(jPageNum>1){
-			prePage.style.display = 'block';
-		}
-	}
-	pageParent.onclick = function(){
-		var item = event.target;
-		var jPageNum = parseInt(item.innerHTML);
-		var totalPage = parseInt(lastPage.innerHTML);
-		renderPage(jPageNum);
-		jump(jPageNum,totalPage,item);
-	}
-	prePage.onclick = function(){
-		var itemIndex = document.querySelector(".act").innerHTML-1;
-		var totalPage = parseInt(lastPage.innerHTML);
-		jump(itemIndex,totalPage,page[itemIndex]);
-	}
-	nextPage.onclick = function(){
-		var itemIndex = parseInt(document.querySelector(".act").innerHTML)+1;
-		var totalPage = parseInt(lastPage.innerHTML);
-		if(itemIndex==totalPage){
-			itemIndex++;
-		}
-		jump(itemIndex,totalPage,page[itemIndex]);
-	}
-	ok.onclick = function(){
-		var itemIndex = parseInt(jumpPage.value);
-		var totalPage = parseInt(lastPage.innerHTML);
-		if(itemIndex<=totalPage&&itemIndex>3){
-			if(itemIndex==totalPage){
-				itemIndex++;
-			}
-			jump(itemIndex,totalPage,page[itemIndex]);
-			jumpPage.value='';
-		}else if(itemIndex<=totalPage&&itemIndex<=3&&totalPage>3){
-			for(var i=itemIndex+2; i<totalPage;i++){
-				page[i].style.display = 'none';
-			}
-			pageSl(1);
-			page[1].style.display = 'block';
-			page[2].style.display = 'block';
-			page[3].style.display = 'block';
-			pageOnlyChange(page[itemIndex]);
-		}else{
-			alert("已超出页数！");
-		}
-		
-	}*/
 </script>
 </body>
 </html>

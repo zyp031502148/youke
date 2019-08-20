@@ -186,6 +186,7 @@
 
 	}
 var page = document.querySelector(".page").children[0].children;
+
 function linkAjax(idName){
 	var option ={
 		type:'GET',
@@ -195,6 +196,7 @@ function linkAjax(idName){
 			id:idName
 		},
 		success:function(res){
+
 			res = JSON.parse(res);
 			var data = res.data;
 			var lastPage = document.querySelector('.lastPage');
@@ -203,8 +205,7 @@ function linkAjax(idName){
 			createPage(parseInt(lastPage.innerHTML));
 			/*if(data.currentPage == 1){
 				createPage(parseInt(lastPage.innerHTML));
-			}*/
-			
+			}*/	
 		}
 	}
 	ajax(option);
@@ -213,10 +214,21 @@ function linkAjax(idName){
 	/*var lastPage = document.querySelector('.lastPage');
 	createPage(parseInt(lastPage.innerHTML));*/
 	var listHead = document.querySelector('.ceping_body_head');
+	var cepingTitle = document.querySelector(".ceping-title");
 	listHead.onclick = function(){
+		page2 = document.querySelector(".page").children[0];
+		page2.innerHTML = (
+												'<li class="pre-page" style="display: none"><a href="#"><img class="prePage" src="images/left2.png"></a></li>'
+													+'<li class="act" id="pagelink">1</li>'
+													+'<li class="sl">...</li>'
+													+'<li id="pagelink" class="lastPage">'+1+'</li>'
+													+'<li class="next-page"><a href="#"><img class="nextPage" src="images/right2.png"></a></li>'
+													);
+				
 		var cepingContents = document.querySelector('.ceping-contents')
 		var currentItem = document.querySelector('.list_on');
 		var item = event.target;
+		cepingTitle.innerHTML = item.innerHTML;
 		if(item.nodeName=='A'){
 			item = item.parentNode;
 		}
@@ -224,54 +236,61 @@ function linkAjax(idName){
 		currentItem.classList.remove('list_on');
 		cepingContents.innerHTML = "";
 		linkAjax(item.id);
-	}
-	var pageParent = document.querySelector(".page").children[0];
-	var prePage = document.querySelector(".pre-page");
-	var nextPage = document.querySelector(".next-page");
-	var lastPage = document.querySelector('.lastPage');
-	var ok = document.querySelector('#OK');
-	var jumpPage = document.querySelector('#jumpPage');
-	pageParent.onclick = function(){
-		var item = event.target;
-		var jPageNum = parseInt(item.innerHTML);
-		var totalPage = parseInt(lastPage.innerHTML);
-		jump(jPageNum,totalPage,item);
-	}
-	prePage.onclick = function(){
-		var itemIndex = document.querySelector(".act").innerHTML-1;
-		var totalPage = parseInt(lastPage.innerHTML);
-		jump(itemIndex,totalPage,page[itemIndex]);
-	}
-	nextPage.onclick = function(){
-		var itemIndex = parseInt(document.querySelector(".act").innerHTML)+1;
-		var totalPage = parseInt(lastPage.innerHTML);
-		if(itemIndex==totalPage){
-			itemIndex++;
+		var pageParent = document.querySelector(".page").children[0];
+		var prePage = document.querySelector(".pre-page");
+		var nextPage = document.querySelector(".next-page");
+		var lastPage = document.querySelector('.lastPage');
+		var ok = document.querySelector('#OK');
+		var jumpPage = document.querySelector('#jumpPage');
+		pageParent.onclick = function(){
+			var item = event.target;
+			var jPageNum = parseInt(item.innerHTML);
+			var totalPage = parseInt(lastPage.innerHTML);
+			jump(jPageNum,totalPage,item);
 		}
-		jump(itemIndex,totalPage,page[itemIndex]);
-	}
-	ok.onclick = function(){
-		var itemIndex = parseInt(jumpPage.value);
-		var totalPage = parseInt(lastPage.innerHTML);
-		if(itemIndex<=totalPage&&itemIndex>3){
+		prePage.onclick = function(){
+			var itemIndex = document.querySelector(".act").innerHTML-1;
+			var totalPage = parseInt(lastPage.innerHTML);
+			if(itemIndex>0){
+				jump(itemIndex,totalPage,page[itemIndex]);
+			}
+			
+		}
+		nextPage.onclick = function(){
+			var itemIndex = parseInt(document.querySelector(".act").innerHTML)+1;
+			var totalPage = parseInt(lastPage.innerHTML);
 			if(itemIndex==totalPage){
 				itemIndex++;
 			}
-			jump(itemIndex,totalPage,page[itemIndex]);
-			jumpPage.value='';
-		}else if(itemIndex<=totalPage&&itemIndex<=3&&totalPage>3){
-			for(var i=itemIndex+2; i<totalPage;i++){
-				page[i].style.display = 'none';
-			}
-			pageSl(1);
-			page[1].style.display = 'block';
-			page[2].style.display = 'block';
-			page[3].style.display = 'block';
-			pageOnlyChange(page[itemIndex]);
-		}else{
-			alert("已超出页数！");
+			if(itemIndex<totalPage)
+				jump(itemIndex,totalPage,page[itemIndex]);
 		}
+		ok.onclick = function(){
+			var itemIndex = parseInt(jumpPage.value);
+			var totalPage = parseInt(lastPage.innerHTML);
+			if(itemIndex<=totalPage&&itemIndex>3){
+				if(itemIndex==totalPage){
+					itemIndex++;
+				}
+				jump(itemIndex,totalPage,page[itemIndex]);
+				jumpPage.value='';
+			}else if(itemIndex<=totalPage&&itemIndex<=3&&totalPage>3){
+				for(var i=itemIndex+2; i<totalPage;i++){
+					page[i].style.display = 'none';
+				}
+				pageSl(1);
+				page[1].style.display = 'block';
+				page[2].style.display = 'block';
+				page[3].style.display = 'block';
+				pageOnlyChange(page[itemIndex]);
+			}else{
+				alert("已超出页数！");
+			}
+		}
+
 	}
+	
+	
 </script>
 </body>
 </html>

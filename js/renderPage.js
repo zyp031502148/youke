@@ -44,6 +44,10 @@ function renderPage(currentPage){
 				cepingBody.appendChild(divcps);
 			}
 			if(currentPage==0){
+				var page2 = document.querySelector(".page").children[0].children;
+				for(var i=2;i<page2.length-3;i++){
+					page2[i].remove();
+				}
 				var lastPage = document.querySelector('.lastPage');
 				lastPage.innerHTML = Math.ceil(res.data.total/12);
 				createPage(lastPage.innerHTML);
@@ -118,6 +122,7 @@ function pageMore(item){
 }
 
 	function jump(jPageNum,totalPage,item){
+		var prePage = document.querySelector(".pre-page");
 		if(jPageNum<totalPage){
 			if(jPageNum>totalPage-2||jPageNum<3){
 				pageOnlyChange(item);
